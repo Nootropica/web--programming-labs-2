@@ -1,0 +1,49 @@
+body {
+    background-color: #f0f8ff; /* Нежный голубой фон */
+    font-family: Arial, sans-serif;
+    color: #333; /* Цвет текста */
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    color: #4CAF50; /* Зеленый заголовок */
+    margin-top: 20px;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 15px 0;
+    padding-left: 40px;
+    padding-right: 40px;
+    text-align: justify;
+    text-indent: 30px;
+}
+
+img {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%; /* Изображение будет адаптивным */
+    height: auto;
+    border-radius: 15px; /* Округленные углы изображения */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Тень для красоты */
+}
+
+img.Student {
+    width: auto;
+    height: 500px;
+    border-radius: 10px;
+}
+
+img.Python {
+    width: auto;
+    height: 500px;
+    border-radius: 10px;
+}
+img.Car {
+    width: auto;
+    height: 500px;
+    border-radius: 10px;
+}
