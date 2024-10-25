@@ -1,45 +1,10 @@
-from flask import Flask, redirect, url_for, render_template
-from lab1 import lab1
-
-app = Flask(__name__)
-app.register_blueprint(lab1)
-
-@app.route("/")
-@app.route("/index")
-
-def start():
-    return redirect("/menu", code=302)
-
-@app.route("/menu")
-def menu():
-     return """
-<!doctype html>
-<html>
-    <head>
-        <title>НГТУ, ФБ, Лабораторные работы</title>
-    </head>
-    <body>
-        <header>
-
-        <h1>НГТУ, ФБ, WEB-программирование, часть 2. Список лабораторных</h1>
-
-        </header>
-        <nav>
-            <ul>
-                <li><a href="/lab1">Первая лабораторная</a></li>
-            </ul>
-        </nav>
-        <footer>
-            &copy; Печенкин Владислав Витальевич, ФБИ-24, 3 курс, 2024
-        </footer>
-    </body>
-</html>
-"""
+from flask import Blueprint, redirect, url_for, render_template
+lab2 = Blueprint('lab2', __name__)
 
 
 flower_list = ['роза', 'тюльпан', 'незабудка', 'ромашка']
 
-@app.route('/lab2/flowers')
+@lab2.route('/lab2/flowers')
 def list_flowers():
     return f'''
 <!doctype html>
@@ -53,7 +18,7 @@ def list_flowers():
 '''
 
 
-@app.route('/lab2/flowers/<int:flower_id>')
+@lab2.route('/lab2/flowers/<int:flower_id>')
 def show_flower(flower_id):
     if flower_id < 0 or flower_id >= len(flower_list):
         abort(404, 'цветок не найден')
@@ -71,7 +36,7 @@ def show_flower(flower_id):
 '''
 
 
-@app.route('/lab2/clear_flowers')
+@lab2.route('/lab2/clear_flowers')
 def clear_flowers():
     global flower_list
     flower_list = []
@@ -86,9 +51,9 @@ def clear_flowers():
 '''
 
 
-@app.route('/lab2/add_flower/<name>')
+@lab2.route('/lab2/add_flower/<name>')
 def add_flower(name):
-    flower_list.append(name)
+    flower_list.lab2end(name)
     return f'''
 <!doctype html>
 <html>
@@ -102,7 +67,7 @@ def add_flower(name):
 '''
 
 
-@app.route('/lab2/example')
+@lab2.route('/lab2/example')
 def example():
      name, lab_num, group, course = 'Владислав Печенкин', 2, 'ФБИ-24', 3
      fruits = [
@@ -117,12 +82,12 @@ def example():
                             course=course, fruits=fruits)
 
 
-@app.route('/lab2/')
-def lab2():
+@lab2.route('/lab2/')
+def labb():
      return render_template('lab2.html')
 
 
-@app.route('/lab2/filters')
+@lab2.route('/lab2/filters')
 def filters():
-     phrase = "0 <b>сколько</b> <u>нам</u> <i>открытий</i> чудных..."
-     return render_template('filter.html', phrase = phrase)
+    phrase = "0 <b>сколько</b> <u>нам</u> <i>открытий</i> чудных..."
+    return render_template('filter.html', phrase = phrase)
