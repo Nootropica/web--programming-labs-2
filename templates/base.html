@@ -3,8 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Владислав Печенкин. {% block lab %}{% endblock %}Лабораторная работа 2</title>
+    <title>Владислав Печенкин. {% block lab %}{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <style>
+        body {
+            color: {{ request.cookies.get('color') or 'black' }};
+            background-color: {{ request.cookies.get('background_color') or 'white' }};
+            font-size: {{ request.cookies.get('font_size') ~ 'px' if request.cookies.get('font_size') else '16px' }};
+        }
+    </style>
 </head>
 <body>
     <header>
