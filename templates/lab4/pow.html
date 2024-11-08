@@ -6,10 +6,10 @@
 {% if error %}
     <h1>Ошибка</h1>
     <p>{{ error }}</p>
-    <a href="{{ back_link }}">Вернуться назад</a>
+    <p><a href="{{ back_link }}">Вернуться назад</a></p>
 {% else %}
     <h1>Возведение в степень</h1>
     {{ x1 }} ^ {{ x2 }} = {{ result }}
-    <a href="{{ back_link }}">Вернуться назад</a>
+    <p><a href="{{ back_link }}">Вернуться назад</a></p>
 {% endif %}
 {% endblock %}

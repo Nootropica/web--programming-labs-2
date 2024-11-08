@@ -23,6 +23,9 @@ def menu():
         <nav>
             <ul>
                 <li><a href="/lab1">Первая лабораторная</a></li>
+                <li><a href="/lab2">Вторая лабораторная</a></li>
+                <li><a href="/lab3">Третья лабораторная</a></li>
+                <li><a href="/lab4">Четвертая лабораторная</a></li>
             </ul>
         </nav>
         <footer>
@@ -86,12 +89,12 @@ def oak():
 <!doctype html>
 <html>
     <head>
-        <link rel="stylesheet" href="''' + url_for('static', filename='lab1.css') + '''">
+        <link rel="stylesheet" href="''' + url_for('static', filename='/lab1/lab1.css') + '''">
         <title>Дуб</title>
     </head>
     <body>
         <h1>Дуб</h1>
-        <img src="''' + url_for('static', filename='oak.jpg') + '''">
+        <img src="''' + url_for('static', filename='/lab1/oak.jpg') + '''">
     </body>
 </html>
 '''
@@ -103,12 +106,12 @@ def student():
 <!doctype html>
 <html>
     <head>
-        <link rel="stylesheet" href="''' + url_for('static', filename='lab1.css') + '''">
+        <link rel="stylesheet" href="''' + url_for('static', filename='/lab1/lab1.css') + '''">
         <title>Студент</title>
     </head>
     <body>
         <h1>Печенкин Владислав Витальевич</h1>
-        <img src="''' + url_for('static', filename='logo.png') + '''" class="Student">
+        <img src="''' + url_for('static', filename='/lab1/logo.png') + '''" class="Student">
     </body>
 </html>
 '''
@@ -120,7 +123,7 @@ def python():
 <!doctype html>
 <html>
     <head>
-        <link rel="stylesheet" href="''' + url_for('static', filename='lab1.css') + '''">
+        <link rel="stylesheet" href="''' + url_for('static', filename='/lab1/lab1.css') + '''">
         <title>Python</title>
     </head>
     <body>
@@ -136,7 +139,7 @@ def python():
             Код можно писать практически в любом редакторе или использовать 
             специальные IDE:
         </p>
-        <img src="''' + url_for('static', filename='python.png') + '''"class="Python">
+        <img src="''' + url_for('static', filename='/lab1/python.png') + '''"class="Python">
     </body>
 </html>
 '''
@@ -148,7 +151,7 @@ def personal():
 <!doctype html>
 <html>
     <head>
-        <link rel="stylesheet" href="''' + url_for('static', filename='lab1.css') + '''">
+        <link rel="stylesheet" href="''' + url_for('static', filename='/lab1/lab1.css') + '''">
         <title>Hyundai Solaris</title>
     </head>
     <body>
@@ -178,7 +181,7 @@ def personal():
         и мультимедийную систему. Hyundai Solaris 2011 года выпуска зарекомендовал 
         себя как практичный и экономичный автомобиль для повседневных поездок в городских условиях.
         </p>
-        <img src="''' + url_for('static', filename='car.jpg') + '''"class="Car">
+        <img src="''' + url_for('static', filename='/lab1/car.jpg') + '''"class="Car">
     </body>
 </html>
 '''

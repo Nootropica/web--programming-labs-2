@@ -5,7 +5,7 @@
 {% block main %}
     <h1>Формы, cookie</h1>
     <div>
-        Привет, <span style="color: {{ name_color }}">{{ name }}</span>!
+        Привет, <span style="color: {{ name_color }}">{{ name if name else "Аноним" }}</span>!
     </div>
     <div>Список сделанных страниц:</div>
     <ul>
@@ -13,5 +13,8 @@
         <li><a href="/lab3/form1">Форма</a></li>
         <li><a href="/lab3/order">Заказ</a></li>
         <li><a href="/lab3/settings">Настройки отображения</a></li>
+        <li><a href="/lab3/ticket">Железнодорожный билет</a></li>
+        <li><a href="/lab3/clear_all_cookies">Очистить все куки</a></li>
+        <li><a href="/lab3/search">Поиск телефонов</a></li>
     </ul>
 {% endblock %}

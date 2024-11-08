@@ -1,6 +1,6 @@
-from flask import Blueprint, redirect, url_for, render_template
-lab2 = Blueprint('lab2', __name__)
+from flask import Blueprint, redirect, url_for, render_template, abort
 
+lab2 = Blueprint('lab2', __name__)
 
 flower_list = ['роза', 'тюльпан', 'незабудка', 'ромашка']
 
@@ -53,7 +53,7 @@ def clear_flowers():
 
 @lab2.route('/lab2/add_flower/<name>')
 def add_flower(name):
-    flower_list.lab2end(name)
+    flower_list.append(name)  # Исправлено с lab2end на append
     return f'''
 <!doctype html>
 <html>
@@ -69,25 +69,25 @@ def add_flower(name):
 
 @lab2.route('/lab2/example')
 def example():
-     name, lab_num, group, course = 'Владислав Печенкин', 2, 'ФБИ-24', 3
-     fruits = [
+    name, lab_num, group, course = 'Владислав Печенкин', 2, 'ФБИ-24', 3
+    fruits = [
         {'name': 'яблоко', 'price': 100},
         {'name': 'груши', 'price': 120},
         {'name': 'апельсины', 'price': 80},
         {'name': 'мандарины', 'price': 95},
         {'name': 'манго', 'price': 321},
     ]
-     return render_template('example.html', 
-                            name=name, lab_num=lab_num, group=group,
-                            course=course, fruits=fruits)
+    return render_template('lab2/example.html',  # Измените путь здесь
+                           name=name, lab_num=lab_num, group=group,
+                           course=course, fruits=fruits)
 
 
 @lab2.route('/lab2/')
 def labb():
-     return render_template('lab2.html')
+    return render_template('lab2/lab2.html')  # Измените путь здесь
 
 
 @lab2.route('/lab2/filters')
 def filters():
     phrase = "0 <b>сколько</b> <u>нам</u> <i>открытий</i> чудных..."
-    return render_template('filter.html', phrase = phrase)
+    return render_template('lab2/filter.html', phrase=phrase)  # Измените путь здесь
