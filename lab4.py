@@ -126,3 +126,4 @@ def tree():
         tree_count += 1
 
     return redirect ('/lab4/tree')
+    
