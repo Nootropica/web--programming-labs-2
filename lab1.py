@@ -5,37 +5,6 @@ lab1 = Blueprint('lab1', __name__)
 def start():
     return redirect("/menu", code=302)
 
-
-@lab1.route("/menu")
-def menu():
-     return """
-<!doctype html>
-<html>
-    <head>
-        <title>НГТУ, ФБ, Лабораторные работы</title>
-    </head>
-    <body>
-        <header>
-
-        <h1>НГТУ, ФБ, WEB-программирование, часть 2. Список лабораторных</h1>
-
-        </header>
-        <nav>
-            <ul>
-                <li><a href="/lab1">Первая лабораторная</a></li>
-                <li><a href="/lab2">Вторая лабораторная</a></li>
-                <li><a href="/lab3">Третья лабораторная</a></li>
-                <li><a href="/lab4">Четвертая лабораторная</a></li>
-            </ul>
-        </nav>
-        <footer>
-            &copy; Печенкин Владислав Витальевич, ФБИ-24, 3 курс, 2024
-        </footer>
-    </body>
-</html>
-"""
-
-
 @lab1.route("/lab1/")
 def lab():
      return """
