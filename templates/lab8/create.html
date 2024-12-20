@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block main %}
+    <h1>Создание статьи</h1>
+    {% if error %}
+        <div class="error">{{ error }}</div>
+    {% endif %}
+    <form action="/lab8/create" method="post">
+        <div>
+            <label>Заголовок: <input type="text" name="title" required></label>
+        </div>
+        <div>
+            <label>Содержимое: <textarea name="content" required></textarea></label>
+        </div>
+        <button type="submit">Создать</button>
+    </form>
+    
+    <form action="/lab8/delete/{{ article.id }}" method="post">
+        <button type="submit">Удалить</button>
+    </form>
+{% endblock %}
